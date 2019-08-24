@@ -4,4 +4,7 @@ from django.shortcuts import render
 
 @login_required
 def inicio(request):
-    return render(request, 'base/inicio.html')
+    data = {
+        'usuario': request.user
+    }
+    return render(request, 'base/inicio.html', data)

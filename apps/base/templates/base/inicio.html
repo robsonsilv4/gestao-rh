@@ -6,9 +6,15 @@
         <p>Primeira coluna</p>
     </div>
     <div class="col">
-        <p>Segunda coluna</p>
+        <p>Olá {{ usuario.funcionario.nome }}.</p>
     </div>
     <div class="col">
+        {% if usuario.funcionario.empresa %}
+        <a href="{% url 'empresas:editar' usuario.funcionario.empresa.id %}">Editar empresa</a>
+        {% else %}
+        <a href="">Criar empresa</a>
+        {% endif %}
+
         <a href="{% url 'logout' %}">Sair</a>
     </div>
 </div>
