@@ -7,4 +7,10 @@
     {{ form|bootstrap }}
     <button type="submit">Salvar</button>
 </form>
+
+<a href="{% url 'documentos:novo' object.id %}" class="btn btn-secondary">Adicionar documento</a>
+
+{% for documento in object.documento_set.all %}
+<a href="{{ documento.arquivo.url }}">{{ documento }}</a>
+{% endfor %}
 {% endblock %}
