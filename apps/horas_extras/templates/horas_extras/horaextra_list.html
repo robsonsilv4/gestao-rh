@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block main %}
+{% for hora_extra in object_list %}
+<a href="{% url 'horas_extras:atualizar' hora_extra.id %}">{{ hora_extra }}</a>
+<a href="{% url 'horas_extras:remover' hora_extra.id %}">Remover</a>
+{% endfor %}
+
+<a href="{% url 'horas_extras:adicionar' %}" class="btn btn-primary">Adicionar</a>
+
+{% if not object_list %}
+<h3>Não existem registros de horas extras.</h3>
+{% endif %}
+{% endblock %}

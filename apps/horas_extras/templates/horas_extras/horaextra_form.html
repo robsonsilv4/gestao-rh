@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block main %}
+<form method="post">
+    {% csrf_token %}
+    {{ form|bootstrap }}
+    <button type="submit">Salvar</button>
+    {% if object %}
+    <a href="{% url 'horas_extras:remover' object.id %}">Remover</a>
+    {% endif %}
+</form>
+{% endblock %}
