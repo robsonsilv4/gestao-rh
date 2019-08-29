@@ -19,7 +19,7 @@
 <h2>Banco de horas</h2>
 <ul>
     {% for hora in object.horaextra_set.all %}
-    <li>{{ hora.horas }} - {{ hora.motivo }}</li>
+    <li><a href="{% url 'horas_extras:atualizar' hora.id %}">{{ hora.horas }} - {{ hora.motivo }}</a></li>
     {% endfor %}
 </ul>
 <h3>Total de horas extras: {{ object.total_horas }}</h3>
