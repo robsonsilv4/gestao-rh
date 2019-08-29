@@ -1,5 +1,7 @@
 .idea/
 venv/
+static/
 *.pyc
 *.sqlite3
 *.pem
+*.sock

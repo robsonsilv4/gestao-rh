@@ -6,7 +6,7 @@ SECRET_KEY = 'o!d8a%%$^j)v+pfv%6r#2s#vsu-xlqqb&z9n!uu$n!!hl8v=xg'
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '18.234.252.15', ]
+ALLOWED_HOSTS = ['127.0.0.1', '54.173.16.159', ]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -88,7 +88,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
