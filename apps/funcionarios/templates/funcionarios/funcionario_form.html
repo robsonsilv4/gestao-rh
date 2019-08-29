@@ -8,9 +8,18 @@
     <button type="submit">Salvar</button>
 </form>
 
-<a href="{% url 'documentos:novo' object.id %}" class="btn btn-secondary">Adicionar documento</a>
+<h2>Documentos</h2>
+<ul>
+    {% for documento in object.documento_set.all %}
+    <li><a href="{{ documento.arquivo.url }}">{{ documento }}</a></li>
+    {% endfor %}
+</ul>
+<a class="btn btn-secondary" href="{% url 'documentos:novo' object.id %}">Adicionar documento</a>
 
-{% for documento in object.documento_set.all %}
-<a href="{{ documento.arquivo.url }}">{{ documento }}</a>
-{% endfor %}
+<h2>Banco de horas</h2>
+<ul>
+    {% for hora in object.horaextra_set.all %}
+    <li>{{ hora.horas }} - {{ hora.motivo }}</li>
+    {% endfor %}
+</ul>
 {% endblock %}
