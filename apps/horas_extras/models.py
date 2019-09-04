@@ -8,6 +8,7 @@ class HoraExtra(models.Model):
     horas = models.DecimalField(max_digits=5, decimal_places=2)
     motivo = models.CharField(max_length=100)
     funcionario = models.ForeignKey(Funcionario, on_delete=models.PROTECT)
+    utilizada = models.BooleanField(default=False)
 
     def __str__(self):
         return self.motivo

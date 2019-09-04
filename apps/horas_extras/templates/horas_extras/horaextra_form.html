@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load bootstrap %}
+{% load static %}
 
 {% block main %}
 <form method="post">
@@ -9,5 +10,13 @@
     {% if object %}
     <a href="{% url 'horas_extras:remover' object.id %}">Remover</a>
     {% endif %}
+    <button onclick="utilizarHorasExtras({{ object.id }})" type="button">Utilizar horas</button>
 </form>
-{% endblock %}
+<p id="mensagem"></p>
+<h2 id="horas_atualizadas">{{ object.funcionario.total_horas }}</h2>
+{% endblock main %}
+
+{% block static %}
+{{ block.super }}
+<script src="{% static 'js/funcoes.js' %}"></script>
+{% endblock static %}

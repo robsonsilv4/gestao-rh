@@ -2,7 +2,7 @@
 
 {% block main %}
 {% for hora_extra in object_list %}
-<a href="{% url 'horas_extras:atualizar_pagina' hora_extra.id %}">{{ hora_extra }}</a>
+<a href="{% url 'horas_extras:atualizar' hora_extra.id %}">{{ hora_extra }}</a>
 <a href="{% url 'horas_extras:remover' hora_extra.id %}">Remover</a>
 {% endfor %}
 
